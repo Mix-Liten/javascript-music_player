@@ -40,7 +40,7 @@ body {
   left: 50%;
   width: 20px;
   height: 20px;
-  transform: translate(-50%, 50%);
+  translate: -50% 50%;
 }
 
 .img-container img {
@@ -51,7 +51,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  animation: rotate 3s linear infinite;
+  animation: cdPlay 3s linear infinite;
 
   animation-play-state: paused;
 }
@@ -60,13 +60,13 @@ body {
   animation-play-state: running;
 }
 
-@keyframes rotate {
+@keyframes cdPlay {
   from {
-    transform: rotate(0deg);
+    rotate: 0deg;
   }
 
   to {
-    transform: rotate(360deg);
+    rotate: 360deg;
   }
 }
 
@@ -105,19 +105,36 @@ body {
   width: calc(100% - 40px);
   padding: 10px 10px 10px 150px;
   opacity: 0;
-  transform: translateY(0%);
-  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  translate: 0 0%;
+  transition: opacity 0.3s ease-in, translate 0.3s 0.15s ease-in;
   z-index: 0;
+}
+
+.music-info #title,
+.music-info .time-container {
+  opacity: 0;
+  transition: opacity 0.15s ease-in;
 }
 
 .music-container.play .music-info {
   opacity: 1;
-  transform: translateY(-100%);
+  translate: 0 -100%;
+  transition: translate 0.3s ease-in, opacity 0.15s ease-in;
 }
 
-.music-info h4 {
+.music-container.play #title,
+.music-container.play .time-container {
+  opacity: 1;
+}
+
+.music-container.play #title {
+  transition: opacity 0.3s 0.45s ease-in;
+}
+
+.music-info #title {
   margin: 0;
 }
+
 
 .progress-container {
   background: #fff;
