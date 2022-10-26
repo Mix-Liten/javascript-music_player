@@ -131,10 +131,18 @@ body {
   transition: opacity 0.3s 0.45s ease-in;
 }
 
+.music-container.play .time-container {
+  transition: opacity 0.3s 0.6s ease-in;
+}
+
 .music-info #title {
   margin: 0;
 }
 
+.music-info .time-container {
+  float: right;
+  font-size: 12px;
+}
 
 .progress-container {
   background: #fff;

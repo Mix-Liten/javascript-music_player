@@ -8,6 +8,8 @@ const progress = document.getElementById('progress')
 const progressContainer = document.getElementById('progress-container')
 const title = document.getElementById('title')
 const cover = document.getElementById('cover')
+const currTime = document.querySelector('#currTime')
+const durTime = document.querySelector('#durTime')
 
 // Song titles
 const songs = ['hey', 'summer', 'ukulele']
@@ -119,6 +121,9 @@ function DurTime(e) {
 
   get_sec(currentTime, sec)
 
+  // change currentTime DOM
+  currTime.innerHTML = min + ':' + sec
+
   // define minutes duration
   let min_d = isNaN(duration) === true ? '0' : Math.floor(duration / 60)
   min_d = min_d < 10 ? '0' + min_d : min_d
@@ -140,6 +145,12 @@ function DurTime(e) {
   // define seconds duration
 
   get_sec_d(duration)
+
+  // change duration DOM
+  const durTimeText = min_d + ':' + sec_d
+  if (durTime.innerText !== durTimeText) {
+    durTime.innerText = min_d + ':' + sec_d
+  }
 }
 
 // Event listeners
