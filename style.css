@@ -51,8 +51,8 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
+  background-color: #0b0b0b81;
   animation: cdPlay 3s linear infinite;
-
   animation-play-state: paused;
 }
 
